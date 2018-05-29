@@ -18,6 +18,7 @@ int maxsum (int a[], int n) {
     }
     cout<<"Max sum: "<<max_sum<<endl;
     cout<<"Index: {"<<start<<","<<end<<"}";
+    return 0;
 }
 
 int main()
