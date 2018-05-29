@@ -11,6 +11,7 @@ int maxsum (int a[], int n) {
         max_sum = (sum_here > max_sum) ? sum_here : max_sum;
     }
     cout<<max_sum;
+    return 0;
 }
 
 int main()
