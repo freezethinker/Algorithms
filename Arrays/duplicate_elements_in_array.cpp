@@ -26,4 +26,3 @@ int main()
     find_duplicates(a, n);
     return 0;
 }
-
