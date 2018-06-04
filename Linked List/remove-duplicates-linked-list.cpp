@@ -2,7 +2,7 @@
 
 using namespace std;
 
-struct newNode(int num) {
+struct newNode() {
     int data;
     struct newNode * next = NULL;
 };
