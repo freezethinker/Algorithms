@@ -10,7 +10,7 @@ struct newNode() {
 void printList (struct newNode * head) {
     struct newNode * current = head;
     while(current->next != NULL) {
-        cout<<current->data<<" ";
+        cout << current->data << " ";
         current = current->next;
     }
 }
