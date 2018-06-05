@@ -1,23 +1,47 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<unordered_set>
 
 using namespace std;
 
-struct newNode() {
+struct Node {
     int data;
-    struct newNode * next = NULL;
+    struct Node * next;
 };
 
-void printList (struct newNode * head) {
-    struct newNode * current = head;
+struct Node * newNode (int num) {
+    Node * temp = new Node;
+    temp->data = num;
+    temp->next = NULL;
+    return temp;
+};
+
+void printList (struct Node * head) {
+    struct Node * current = head;
     while(current->next != NULL) {
         cout << current->data << " ";
         current = current->next;
     }
 }
 
+void removeDuplicates(struct Node * head) {
+    unordered_set<int> nonDuplicates;
+    struct Node * current = head;
+    struct Node * prev = head;
+    while(current->next != NULL) {
+        if(nonDuplicates.find(current->data) == nonDuplicates.end()) {
+            nonDuplicates.insert(current->data);
+        }
+        else {
+            prev->next = current->next;
+        }
+        prev = current;
+        current = current->next;
+    }
+}
+
 int main() {
 
-    struct newNode * head = newNode(1);
+    struct Node * head = newNode(1);
     head->next = newNode(2);
     head->next->next = newNode(4);
     head->next->next->next = newNode(3);
@@ -27,6 +51,12 @@ int main() {
     head->next->next->next->next->next->next->next = newNode(6);
     head->next->next->next->next->next->next->next->next = newNode(4);
 
+    cout<<"Original list: ";
+    printList(head);
+
+    removeDuplicates(head);
+
+    cout<<endl<<"Updated list: ";
     printList(head);
 
     return 0;   
