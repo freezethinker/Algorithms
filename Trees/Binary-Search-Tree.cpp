@@ -57,10 +57,8 @@ int main() {
 
     cout<<endl<<"Inorder Traversal: ";
     inorderTraversal(root);
-    
     cout<<endl<<"Preorder Traversal: ";
     preorderTraversal(root);
-    
     cout<<endl<<"Postorder Traversal: ";
     postorderTraversal(root);
 
