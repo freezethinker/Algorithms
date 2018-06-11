@@ -60,6 +60,5 @@ int main() {
     preorderTraversal(root);
     cout<<endl<<"Postorder Traversal: ";
     postorderTraversal(root);
-
     return 0;
 }
