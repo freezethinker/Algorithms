@@ -2,6 +2,8 @@
 
 using namespace std;
 
+int sum=0;
+
 struct node {
     int data;
     struct node * left;
@@ -25,23 +27,29 @@ int getHeight (struct node * root) {
     }
 }
 
-void printLevel(struct node * root, int level) {
+void levelSum(struct node * root, int level) {
     if(root == NULL) return;
 
-    if(level == 1) cout<<root->data<<" ";
+    if(level == 1) sum=sum+root->data;
     else {
-        printLevel(root->left, level-1);
-        printLevel(root->right, level-1);
+        levelSum(root->left, level-1);
+        levelSum(root->right, level-1);
     }
 }
 
 void levelOrderTraversal(struct node * root) {
-    int h, i, direction = 0;
+    int h, i, direction = 0, max_sum = 0, max_level = 0;
     h = getHeight(root);
     for(i = 0; i <= h; i++) {
-        printLevel(root, i);
-        cout<<endl;
+        sum=0;
+        levelSum(root, i);   
+        if(max_sum < sum) {
+            max_sum = sum;
+            max_level = i;
+        }
     }
+    cout<<"Max sum: "<<max_sum;
+    cout<<endl<<"Level: "<<max_level<<endl;
 }
 
 int main() {
@@ -57,7 +65,6 @@ int main() {
     root->right->left = newNode(6);
     root->right->right = newNode(7);
 
-    cout<<endl<<"Level order traversal: ";
     levelOrderTraversal(root);
 
     return 0;
