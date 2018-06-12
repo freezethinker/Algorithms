@@ -25,22 +25,30 @@ int getHeight (struct node * root) {
     }
 }
 
-void printLevel(struct node * root, int level) {
+void printLevel(struct node * root, int level, int direction) {
     if(root == NULL) return;
 
     if(level == 1) cout<<root->data<<" ";
     else {
-        printLevel(root->left, level-1);
-        printLevel(root->right, level-1);
+        if(direction) {
+            printLevel(root->right, level-1, direction);
+            printLevel(root->left, level-1, direction);
+        }
+        else {
+            printLevel(root->left, level-1, direction);
+            printLevel(root->right, level-1, direction);
+        }
+        
     }
 }
 
-void levelOrderTraversal(struct node * root) {
+void zigzagTraversal(struct node * root) {
     int h, i, direction = 0;
     h = getHeight(root);
     for(i = 0; i <= h; i++) {
         printLevel(root, i, direction);
         cout<<endl;
+        direction = direction == 0 ? 1 : 0;
     }
 }
 
@@ -58,7 +66,7 @@ int main() {
     root->right->right = newNode(7);
 
     cout<<endl<<"Level order traversal: ";
-    levelOrderTraversal(root);
+    zigzagTraversal(root);
 
     return 0;
 }
