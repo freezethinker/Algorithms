@@ -9,7 +9,7 @@ struct Node {
 };
 
 struct Node * newNode (int num) {
-    Node * temp = new Node;
+    struct Node * temp = new Node;
     temp->data = num;
     temp->next = NULL;
     return temp;
@@ -17,10 +17,8 @@ struct Node * newNode (int num) {
 
 void printList (struct Node * head) {
     struct Node * current = head;
-    while(current->next != NULL) {
-        cout << current->data << " ";
-        current = current->next;
-    }
+    cout<<current->data<<" ";
+    if(current->next != NULL) printList(current->next);
 }
 
 void removeDuplicates(struct Node * head) {
