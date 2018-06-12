@@ -46,6 +46,7 @@ void postorderTraversal(struct node * root) {
 
 int main() {
     struct node * root = newNode(10);
+    
     insertIntoBST(root, 8);
     insertIntoBST(root, 14);
     insertIntoBST(root, 7);
