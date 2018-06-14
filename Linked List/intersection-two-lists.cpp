@@ -59,18 +59,18 @@ void computeIntersection (struct Node * head1, struct Node * head2) {
     cout<<endl<<"Intersection Elements: ";
     while(current->next != NULL) {
         if(listOne.find(current->data) != listOne.end()) {
-            head3 = insertInOrder(head3, current->data);
+            // head3 = insertInOrder(head3, current->data);
             cout<<current->data<<" ";
             listOne.erase(current->data);
         }
         current = current->next;
     }
 
-    // if(listOne.find(current->data) != listOne.end()) {
-    //     head3 = insertInOrder(head3, current->data);
-    //     cout<<current->data;
-    //     listOne.erase(current->data);
-    // }
+    if(listOne.find(current->data) != listOne.end()) {
+        // head3 = insertInOrder(head3, current->data);
+        cout<<current->data;
+        listOne.erase(current->data);
+    }
 }
 
 int main() {
