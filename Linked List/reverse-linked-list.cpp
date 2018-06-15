@@ -33,7 +33,12 @@ int main() {
     head->next->next = newNode(3);
     head->next->next->next = newNode(4);
 
-    // reverseLinkedList(head);
+    cout<<"Original Linked List: ";
+    printLinkedList(head);
+
+    reverseLinkedList(head);
+    
+    cout<<"Reverse Linked List: ";
     printLinkedList(head);
 
     return 0;
