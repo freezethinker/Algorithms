@@ -27,7 +27,12 @@ void reverseLinkedList(struct node * head) {
     struct node * current = head;
     struct node * next = head;
 
-    
+    while( next != NULL) {
+        current = current->next;
+        next = current->next->next;
+        current->next = prev;
+        prev = current;
+    }
 }
 
 int main() {
