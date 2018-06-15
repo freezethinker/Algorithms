@@ -22,8 +22,7 @@ void printLinkedList(struct node * head) {
     }
 }
 
-void reverseLinkedList(struct node * head) {
-    
+void reverseLinkedList(struct node * head) {   
 }
 
 int main() {
@@ -37,7 +36,7 @@ int main() {
     printLinkedList(head);
 
     reverseLinkedList(head);
-    
+
     cout<<"Reverse Linked List: ";
     printLinkedList(head);
 
