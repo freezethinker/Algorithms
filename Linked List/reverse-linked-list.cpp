@@ -15,7 +15,11 @@ struct node * newNode(int num) {
 }
 
 void printLinkedList(struct node * head) {
-
+    struct node * current = head;
+    while(current != NULL) {
+        cout<<current->data<<" ";
+        current = current->next;
+    }
 }
 
 void reverseLinkedList(struct node * head) {
@@ -29,7 +33,7 @@ int main() {
     head->next->next = newNode(3);
     head->next->next->next = newNode(4);
 
-    reverseLinkedList(head);
+    // reverseLinkedList(head);
     printLinkedList(head);
 
     return 0;
