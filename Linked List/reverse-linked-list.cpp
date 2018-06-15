@@ -22,7 +22,12 @@ void printLinkedList(struct node * head) {
     }
 }
 
-void reverseLinkedList(struct node * head) {   
+void reverseLinkedList(struct node * head) {
+    struct node * prev = head;   
+    struct node * current = head;
+    struct node * next = head;
+
+    
 }
 
 int main() {
