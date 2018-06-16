@@ -33,10 +33,8 @@ void reverseLinkedList(struct node * head) {
         prev = current;
         current = next;
     }
-    * head = * prev;
+    *head = *prev;
 }
-// 1 2 3 4
-// C
 
 int main() {
 
