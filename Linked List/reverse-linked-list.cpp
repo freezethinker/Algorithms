@@ -33,8 +33,10 @@ void reverseLinkedList(struct node * head) {
         prev = current;
         current = next;
     }
-    head = prev;
+    * head = * prev;
 }
+// 1 2 3 4
+// C
 
 int main() {
 
@@ -45,11 +47,12 @@ int main() {
 
     cout<<"Original Linked List: ";
     printLinkedList(head);
-
+    // cout<<head->data;
     reverseLinkedList(head);
 
     cout<<endl<<"Reverse Linked List: ";
     printLinkedList(head);
+    // cout<<head->data;
 
     return 0;
 }
