@@ -48,7 +48,7 @@ int main() {
 
     reverseLinkedList(head);
 
-    cout<<"Reverse Linked List: ";
+    cout<<endl<<"Reverse Linked List: ";
     printLinkedList(head);
 
     return 0;
