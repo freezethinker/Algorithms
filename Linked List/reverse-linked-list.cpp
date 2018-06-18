@@ -4,13 +4,13 @@ using namespace std;
 
 struct node {
     int data;
-    struct node * next;
+    struct node * link;
 };
 
 struct node * newNode(int num) {
     struct node * newNode = new node;
     newNode->data = num;
-    newNode->next = NULL;
+    newNode->link = NULL;
     return newNode;
 }
 
@@ -18,29 +18,30 @@ void printLinkedList(struct node * head) {
     struct node * current = head;
     while(current != NULL) {
         cout<<current->data<<" ";
-        current = current->next;
+        current = current->link;
     }
 }
 
 void reverseLinkedList(struct node * head) {
-    struct node * prev = head;   
+    struct node * prev = NULL;   
     struct node * current = head;
-    struct node * next = head;
+    struct node * next = NULL;
 
-    while( next != NULL) {
-        current = current->next;
-        next = current->next->next;
-        current->next = prev;
+    while(current != NULL) {
+        next = current->link;
+        current->link = prev;
         prev = current;
+        current = next;
     }
+    head = prev;
 }
 
 int main() {
 
     struct node * head = newNode(1);
-    head->next = newNode(2);
-    head->next->next = newNode(3);
-    head->next->next->next = newNode(4);
+    head->link = newNode(2);
+    head->link->link = newNode(3);
+    head->link->link->link = newNode(4);
 
     cout<<"Original Linked List: ";
     printLinkedList(head);
