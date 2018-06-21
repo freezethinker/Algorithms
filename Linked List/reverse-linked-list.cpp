@@ -45,12 +45,11 @@ int main() {
 
     cout<<"Original Linked List: ";
     printLinkedList(head);
-    // cout<<head->data;
+    
     head = reverseLinkedList(head);
 
     cout<<endl<<"Reverse Linked List: ";
     printLinkedList(head);
-    // cout<<head->data;
 
     return 0;
 }
