@@ -38,6 +38,8 @@ int main() {
     root->right->left = newNode(6);
     root->right->right = newNode(7);
 
+    root->right->right->right = newNode(7);
+
     int h = getHeight(root);
     cout<<"Height of the tree: "<<h<<endl;
     

@@ -6,6 +6,7 @@
         "string": "cpp",
         "string_view": "cpp",
         "ios": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "stack": "cpp"
     }
 }
